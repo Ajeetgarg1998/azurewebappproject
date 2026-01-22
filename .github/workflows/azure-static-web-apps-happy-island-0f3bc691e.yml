@@ -1,4 +1,24 @@
-name: Azure Static Web Apps CI/CD
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
 
 on:
   push:
@@ -56,3 +76,4 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           action: "close"
+
