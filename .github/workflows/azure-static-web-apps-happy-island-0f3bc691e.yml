@@ -1,7 +1,5 @@
 name: Azure Static Web Apps CI/CD
 
-name: Build & Deploy
-
 on:
   push:
     branches:
@@ -78,5 +76,6 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           action: "close"
+
 
 
